@@ -1,7 +1,6 @@
 import database from "infra/database.js"
 
 async function status(request, response) {
-  try{
     const database = {
       version: await getDbVersion(),
       max_connections: await getMaxConnections(),
@@ -12,10 +11,6 @@ async function status(request, response) {
       updated_at: new Date().toISOString(),
       dependencies: {database}
     });
-  }catch(error){
-    console.error(`An error happened when retrieving the status information: ${JSON.stringify(error)}`);
-    response.status(500).json({error});
-  }
 }
 
 async function getDbVersion(){
