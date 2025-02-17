@@ -20,7 +20,7 @@ async function getNewClient(){
         user: process.env.POSTGRES_USER,
         database: process.env.POSTGRES_DB,
         password: process.env.POSTGRES_PASSWORD,
-        ss: getSSLValues()
+        ssl: getSSLValues()
     });
     client.connect();
     return client;
