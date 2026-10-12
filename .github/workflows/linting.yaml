@@ -4,7 +4,7 @@ on: pull_request
 
 jobs:
   prettier:
-    name: Prettier 
+    name: Prettier
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
